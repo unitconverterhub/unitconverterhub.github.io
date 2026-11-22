@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Length Converter | Unit Converter</title>
+<meta name="description" content="Convert length between metres, kilometres, centimetres, millimetres, miles, yards, feet, inches and nautical miles. One inch is exactly 25.4 millimetres, so every result is exact.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+<script>
+
+const UNITS = {
+ length:{m:1,km:1000,cm:0.01,mm:0.001,mi:1609.344,yd:0.9144,ft:0.3048,in:0.0254,nmi:1852},
+ weight:{kg:1,g:0.001,mg:0.000001,lb:0.45359237,oz:0.028349523125,st:6.35029318,t:1000},
+ volume:{l:1,ml:0.001,m3:1000,gal_us:3.785411784,gal_uk:4.54609,qt_us:0.946352946,pt_us:0.473176473,cup_us:0.236588236,fl_oz_us:0.0295735295625,tsp:0.00492892159375,tbsp:0.01478676478125},
+ speed:{ms:1,kmh:1/3.6,mph:0.44704,kn:0.514444,fts:0.3048}
+};
+const NAMES = {
+ length:{m:'Metre (m)',km:'Kilometre (km)',cm:'Centimetre (cm)',mm:'Millimetre (mm)',mi:'Mile (mi)',yd:'Yard (yd)',ft:'Foot (ft)',in:'Inch (in)',nmi:'Nautical mile (nmi)'},
+ weight:{kg:'Kilogram (kg)',g:'Gram (g)',mg:'Milligram (mg)',lb:'Pound (lb)',oz:'Ounce (oz)',st:'Stone (st)',t:'Tonne (t)'},
+ volume:{l:'Litre (L)',ml:'Millilitre (mL)',m3:'Cubic metre (m3)',gal_us:'US gallon',gal_uk:'UK gallon',qt_us:'US quart',pt_us:'US pint',cup_us:'US cup',fl_oz_us:'US fluid ounce',tsp:'Teaspoon',tbsp:'Tablespoon'},
+ speed:{ms:'Metre per second (m/s)',kmh:'Kilometre per hour (km/h)',mph:'Mile per hour (mph)',kn:'Knot (kn)',fts:'Foot per second (ft/s)'}
+};
+function convert(cat, val, from, to){
+ if(cat==='temperature'){
+   let c = from==='C'?val : from==='F'?(val-32)*5/9 : val-273.15;
+   return to==='C'?c : to==='F'?c*9/5+32 : c+273.15;
+ }
+ return val * UNITS[cat][from] / UNITS[cat][to];
+}
+function fmt(n){ if(!isFinite(n)) return '—'; const a=Math.abs(n); if(a!==0 && (a>=1e9||a<1e-6)) return n.toExponential(6); return parseFloat(n.toPrecision(10)).toLocaleString('en-US',{maximumFractionDigits:10}); }
+
+const CATS=['length'];
+function update(cat){
+ const v=parseFloat(document.getElementById('amt-'+cat).value);
+ const f=document.getElementById('from-'+cat).value, t=document.getElementById('to-'+cat).value;
+ const out=document.getElementById('res-'+cat), fm=document.getElementById('formula-'+cat);
+ if(isNaN(v)){ out.innerHTML='Enter a number to convert.'; fm.textContent=''; return; }
+ const r=convert(cat,v,f,t);
+ const fname=document.getElementById('from-'+cat).selectedOptions[0].text;
+ const tname=document.getElementById('to-'+cat).selectedOptions[0].text;
+ out.innerHTML='<strong>'+fmt(v)+' '+fname+'</strong> = <strong>'+fmt(r)+' '+tname+'</strong>';
+ fm.textContent = cat==='temperature' ? 'Temperature is converted via Celsius as the common scale.' : 'Result uses the exact conversion factor for these units.';
+}
+CATS.forEach(cat=>{
+ ['amt-'+cat,'from-'+cat,'to-'+cat].forEach(id=>document.getElementById(id).addEventListener('input',()=>update(cat)));
+ const b=document.querySelector('.swap-btn[data-cat="'+cat+'"]');
+ if(b) b.addEventListener('click',()=>{ const f=document.getElementById('from-'+cat), t=document.getElementById('to-'+cat); const tmp=f.value; f.value=t.value; t.value=tmp; update(cat); });
+ update(cat);
+});
+// Category tabs on homepage
+const tabs=document.querySelectorAll('.cat-tab');
+tabs.forEach(btn=>btn.addEventListener('click',()=>{
+ tabs.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+ document.querySelectorAll('.converter[data-cat]').forEach(c=>c.style.display='none');
+ const box=document.querySelector('.converter[data-cat="'+btn.dataset.cat+'"]');
+ box.style.display='block'; update(btn.dataset.cat);
+}));
+// Unit search
+const searchInput=document.getElementById('unit-search');
+const searchBox=document.getElementById('search-results');
+if(searchInput){
+ searchInput.addEventListener('input',()=>{
+   const q=searchInput.value.trim().toLowerCase(); searchBox.innerHTML='';
+   if(q.length<2){ searchBox.style.display='none'; return; }
+   let hits=[];
+   for(const cat of Object.keys(NAMES)) for(const [k,v] of Object.entries(NAMES[cat])) if(v.toLowerCase().includes(q)||cat.includes(q)) hits.push({cat,k,v});
+   if(q.includes('celsius')||q.includes('fahrenheit')||q.includes('kelvin')||q.includes('temp')) hits.push({cat:'temperature',k:'C',v:'Celsius (°C)'});
+   if(!hits.length){ searchBox.style.display='none'; return; }
+   hits.slice(0,8).forEach(h=>{
+     const b=document.createElement('button'); b.type='button'; b.textContent=h.v+' — '+h.cat;
+     b.addEventListener('click',()=>{
+       const tab=document.querySelector('.cat-tab[data-cat="'+h.cat+'"]');
+       if(tab) tab.click();
+       const sel=document.getElementById('from-'+h.cat); if(sel){ sel.value=h.k; update(h.cat); }
+       searchBox.style.display='none'; searchInput.value='';
+       document.querySelector('.converter[data-cat="'+h.cat+'"]').scrollIntoView({behavior:'smooth',block:'center'});
+     });
+     searchBox.appendChild(b);
+   });
+   searchBox.style.display='block';
+ });
+ document.addEventListener('click',e=>{ if(!e.target.closest('.search-wrap')) searchBox.style.display='none'; });
+}
+</script>
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="tool-page">
+<h1>Length Converter</h1>
+<p>Convert length between metres, kilometres, centimetres, millimetres, miles, yards, feet, inches and nautical miles. One inch is exactly 25.4 millimetres, so every result is exact.</p>
+<div class="tool-note"><strong>How it works:</strong> Length conversions use exact defined factors. For example, 1 mile = 1,609.344 metres and 1 foot = 0.3048 metres. All calculations run in your browser with JavaScript — no data is sent anywhere and no internet connection is needed after the page loads.</div>
+
+<div class="converter" data-cat="length">
+<h2>Length Converter</h2>
+<div class="conv-row">
+<div class="conv-field"><label for="amt-length">Amount</label><input id="amt-length" type="number" value="1" step="any"></div>
+<div class="conv-field"><label for="from-length">From</label><select id="from-length"><option value="m">Metre (m)</option><option value="km" selected>Kilometre (km)</option><option value="cm">Centimetre (cm)</option><option value="mm">Millimetre (mm)</option><option value="mi">Mile (mi)</option><option value="yd">Yard (yd)</option><option value="ft">Foot (ft)</option><option value="in">Inch (in)</option><option value="nmi">Nautical mile (nmi)</option></select></div>
+<button class="swap-btn" type="button" data-cat="length" title="Swap units">&#8646;</button>
+<div class="conv-field"><label for="to-length">To</label><select id="to-length"><option value="m">Metre (m)</option><option value="km">Kilometre (km)</option><option value="cm">Centimetre (cm)</option><option value="mm">Millimetre (mm)</option><option value="mi" selected>Mile (mi)</option><option value="yd">Yard (yd)</option><option value="ft">Foot (ft)</option><option value="in">Inch (in)</option><option value="nmi">Nautical mile (nmi)</option></select></div>
+</div>
+<div class="result-box" id="res-length"></div>
+<p class="formula" id="formula-length"></p>
+</div>
+<p style="margin-top:20px"><a href="/index.html">&larr; Back to all converters</a></p>
+</div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>
