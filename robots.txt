@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://unitconverter.github.io/sitemap.xml

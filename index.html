@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Converter — Length, Weight, Temperature, Volume &amp; Speed</title>
+<meta name="description" content="Convert length, weight, temperature, volume and speed — fast, free and exact. Free online unit converter with exact factors.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+<script>
+
+const UNITS = {
+ length:{m:1,km:1000,cm:0.01,mm:0.001,mi:1609.344,yd:0.9144,ft:0.3048,in:0.0254,nmi:1852},
+ weight:{kg:1,g:0.001,mg:0.000001,lb:0.45359237,oz:0.028349523125,st:6.35029318,t:1000},
+ volume:{l:1,ml:0.001,m3:1000,gal_us:3.785411784,gal_uk:4.54609,qt_us:0.946352946,pt_us:0.473176473,cup_us:0.236588236,fl_oz_us:0.0295735295625,tsp:0.00492892159375,tbsp:0.01478676478125},
+ speed:{ms:1,kmh:1/3.6,mph:0.44704,kn:0.514444,fts:0.3048}
+};
+const NAMES = {
+ length:{m:'Metre (m)',km:'Kilometre (km)',cm:'Centimetre (cm)',mm:'Millimetre (mm)',mi:'Mile (mi)',yd:'Yard (yd)',ft:'Foot (ft)',in:'Inch (in)',nmi:'Nautical mile (nmi)'},
+ weight:{kg:'Kilogram (kg)',g:'Gram (g)',mg:'Milligram (mg)',lb:'Pound (lb)',oz:'Ounce (oz)',st:'Stone (st)',t:'Tonne (t)'},
+ volume:{l:'Litre (L)',ml:'Millilitre (mL)',m3:'Cubic metre (m3)',gal_us:'US gallon',gal_uk:'UK gallon',qt_us:'US quart',pt_us:'US pint',cup_us:'US cup',fl_oz_us:'US fluid ounce',tsp:'Teaspoon',tbsp:'Tablespoon'},
+ speed:{ms:'Metre per second (m/s)',kmh:'Kilometre per hour (km/h)',mph:'Mile per hour (mph)',kn:'Knot (kn)',fts:'Foot per second (ft/s)'}
+};
+function convert(cat, val, from, to){
+ if(cat==='temperature'){
+   let c = from==='C'?val : from==='F'?(val-32)*5/9 : val-273.15;
+   return to==='C'?c : to==='F'?c*9/5+32 : c+273.15;
+ }
+ return val * UNITS[cat][from] / UNITS[cat][to];
+}
+function fmt(n){ if(!isFinite(n)) return '—'; const a=Math.abs(n); if(a!==0 && (a>=1e9||a<1e-6)) return n.toExponential(6); return parseFloat(n.toPrecision(10)).toLocaleString('en-US',{maximumFractionDigits:10}); }
+
+const CATS=['length','weight','temperature','speed','volume'];
+function update(cat){
+ const v=parseFloat(document.getElementById('amt-'+cat).value);
+ const f=document.getElementById('from-'+cat).value, t=document.getElementById('to-'+cat).value;
+ const out=document.getElementById('res-'+cat), fm=document.getElementById('formula-'+cat);
+ if(isNaN(v)){ out.innerHTML='Enter a number to convert.'; fm.textContent=''; return; }
+ const r=convert(cat,v,f,t);
+ const fname=document.getElementById('from-'+cat).selectedOptions[0].text;
+ const tname=document.getElementById('to-'+cat).selectedOptions[0].text;
+ out.innerHTML='<strong>'+fmt(v)+' '+fname+'</strong> = <strong>'+fmt(r)+' '+tname+'</strong>';
+ fm.textContent = cat==='temperature' ? 'Temperature is converted via Celsius as the common scale.' : 'Result uses the exact conversion factor for these units.';
+}
+CATS.forEach(cat=>{
+ ['amt-'+cat,'from-'+cat,'to-'+cat].forEach(id=>document.getElementById(id).addEventListener('input',()=>update(cat)));
+ const b=document.querySelector('.swap-btn[data-cat="'+cat+'"]');
+ if(b) b.addEventListener('click',()=>{ const f=document.getElementById('from-'+cat), t=document.getElementById('to-'+cat); const tmp=f.value; f.value=t.value; t.value=tmp; update(cat); });
+ update(cat);
+});
+// Category tabs on homepage
+const tabs=document.querySelectorAll('.cat-tab');
+tabs.forEach(btn=>btn.addEventListener('click',()=>{
+ tabs.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+ document.querySelectorAll('.converter[data-cat]').forEach(c=>c.style.display='none');
+ const box=document.querySelector('.converter[data-cat="'+btn.dataset.cat+'"]');
+ box.style.display='block'; update(btn.dataset.cat);
+}));
+// Unit search
+const searchInput=document.getElementById('unit-search');
+const searchBox=document.getElementById('search-results');
+if(searchInput){
+ searchInput.addEventListener('input',()=>{
+   const q=searchInput.value.trim().toLowerCase(); searchBox.innerHTML='';
+   if(q.length<2){ searchBox.style.display='none'; return; }
+   let hits=[];
+   for(const cat of Object.keys(NAMES)) for(const [k,v] of Object.entries(NAMES[cat])) if(v.toLowerCase().includes(q)||cat.includes(q)) hits.push({cat,k,v});
+   if(q.includes('celsius')||q.includes('fahrenheit')||q.includes('kelvin')||q.includes('temp')) hits.push({cat:'temperature',k:'C',v:'Celsius (°C)'});
+   if(!hits.length){ searchBox.style.display='none'; return; }
+   hits.slice(0,8).forEach(h=>{
+     const b=document.createElement('button'); b.type='button'; b.textContent=h.v+' — '+h.cat;
+     b.addEventListener('click',()=>{
+       const tab=document.querySelector('.cat-tab[data-cat="'+h.cat+'"]');
+       if(tab) tab.click();
+       const sel=document.getElementById('from-'+h.cat); if(sel){ sel.value=h.k; update(h.cat); }
+       searchBox.style.display='none'; searchInput.value='';
+       document.querySelector('.converter[data-cat="'+h.cat+'"]').scrollIntoView({behavior:'smooth',block:'center'});
+     });
+     searchBox.appendChild(b);
+   });
+   searchBox.style.display='block';
+ });
+ document.addEventListener('click',e=>{ if(!e.target.closest('.search-wrap')) searchBox.style.display='none'; });
+}
+</script>
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<div class="hero">
+<h1>Convert Any Unit, Instantly and Exactly</h1>
+<p>Convert length, weight, temperature, volume and speed — fast, free and exact. All calculations run in your browser — no data leaves your device, no sign-up, no waiting.</p>
+<div class="search-wrap">
+<input id="unit-search" type="search" placeholder="Search a unit — try &quot;mile&quot;, &quot;kilogram&quot;, &quot;celsius&quot;..." autocomplete="off">
+<div class="search-results" id="search-results"></div>
+</div>
+<div style="margin-bottom:20px"><button class="cat-tab active" data-cat="length" type="button" style="padding:10px 18px;margin:4px;border:none;border-radius:20px;background:#fff;color:#0f766e;font-weight:700;cursor:pointer">Length</button><button class="cat-tab" data-cat="weight" type="button" style="padding:10px 18px;margin:4px;border:none;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-weight:700;cursor:pointer">Weight</button><button class="cat-tab" data-cat="temperature" type="button" style="padding:10px 18px;margin:4px;border:none;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-weight:700;cursor:pointer">Temperature</button><button class="cat-tab" data-cat="volume" type="button" style="padding:10px 18px;margin:4px;border:none;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-weight:700;cursor:pointer">Volume</button><button class="cat-tab" data-cat="speed" type="button" style="padding:10px 18px;margin:4px;border:none;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-weight:700;cursor:pointer">Speed</button></div>
+<div id="converters">
+
+<div class="converter" data-cat="length">
+<h2>Unit Converter</h2>
+<div class="conv-row">
+<div class="conv-field"><label for="amt-length">Amount</label><input id="amt-length" type="number" value="1" step="any"></div>
+<div class="conv-field"><label for="from-length">From</label><select id="from-length"><option value="m">Metre (m)</option><option value="km" selected>Kilometre (km)</option><option value="cm">Centimetre (cm)</option><option value="mm">Millimetre (mm)</option><option value="mi">Mile (mi)</option><option value="yd">Yard (yd)</option><option value="ft">Foot (ft)</option><option value="in">Inch (in)</option><option value="nmi">Nautical mile (nmi)</option></select></div>
+<button class="swap-btn" type="button" data-cat="length" title="Swap units">&#8646;</button>
+<div class="conv-field"><label for="to-length">To</label><select id="to-length"><option value="m">Metre (m)</option><option value="km">Kilometre (km)</option><option value="cm">Centimetre (cm)</option><option value="mm">Millimetre (mm)</option><option value="mi" selected>Mile (mi)</option><option value="yd">Yard (yd)</option><option value="ft">Foot (ft)</option><option value="in">Inch (in)</option><option value="nmi">Nautical mile (nmi)</option></select></div>
+</div>
+<div class="result-box" id="res-length"></div>
+<p class="formula" id="formula-length"></p>
+</div>
+
+<div class="converter" style="display:none" data-cat="weight">
+<h2>Unit Converter</h2>
+<div class="conv-row">
+<div class="conv-field"><label for="amt-weight">Amount</label><input id="amt-weight" type="number" value="1" step="any"></div>
+<div class="conv-field"><label for="from-weight">From</label><select id="from-weight"><option value="kg" selected>Kilogram (kg)</option><option value="g">Gram (g)</option><option value="mg">Milligram (mg)</option><option value="lb">Pound (lb)</option><option value="oz">Ounce (oz)</option><option value="st">Stone (st)</option><option value="t">Tonne (t)</option></select></div>
+<button class="swap-btn" type="button" data-cat="weight" title="Swap units">&#8646;</button>
+<div class="conv-field"><label for="to-weight">To</label><select id="to-weight"><option value="kg">Kilogram (kg)</option><option value="g">Gram (g)</option><option value="mg">Milligram (mg)</option><option value="lb" selected>Pound (lb)</option><option value="oz">Ounce (oz)</option><option value="st">Stone (st)</option><option value="t">Tonne (t)</option></select></div>
+</div>
+<div class="result-box" id="res-weight"></div>
+<p class="formula" id="formula-weight"></p>
+</div>
+
+<div class="converter" style="display:none" data-cat="temperature">
+<h2>Unit Converter</h2>
+<div class="conv-row">
+<div class="conv-field"><label for="amt-temperature">Amount</label><input id="amt-temperature" type="number" value="1" step="any"></div>
+<div class="conv-field"><label for="from-temperature">From</label><select id="from-temperature"><option value="C" selected>Celsius (°C)</option><option value="F">Fahrenheit (°F)</option><option value="K">Kelvin (K)</option></select></div>
+<button class="swap-btn" type="button" data-cat="temperature" title="Swap units">&#8646;</button>
+<div class="conv-field"><label for="to-temperature">To</label><select id="to-temperature"><option value="C">Celsius (°C)</option><option value="F" selected>Fahrenheit (°F)</option><option value="K">Kelvin (K)</option></select></div>
+</div>
+<div class="result-box" id="res-temperature"></div>
+<p class="formula" id="formula-temperature"></p>
+</div>
+
+<div class="converter" style="display:none" data-cat="volume">
+<h2>Unit Converter</h2>
+<div class="conv-row">
+<div class="conv-field"><label for="amt-volume">Amount</label><input id="amt-volume" type="number" value="1" step="any"></div>
+<div class="conv-field"><label for="from-volume">From</label><select id="from-volume"><option value="l" selected>Litre (L)</option><option value="ml">Millilitre (mL)</option><option value="m3">Cubic metre (m3)</option><option value="gal_us">US gallon</option><option value="gal_uk">UK gallon</option><option value="qt_us">US quart</option><option value="pt_us">US pint</option><option value="cup_us">US cup</option><option value="fl_oz_us">US fluid ounce</option><option value="tsp">Teaspoon</option><option value="tbsp">Tablespoon</option></select></div>
+<button class="swap-btn" type="button" data-cat="volume" title="Swap units">&#8646;</button>
+<div class="conv-field"><label for="to-volume">To</label><select id="to-volume"><option value="l">Litre (L)</option><option value="ml">Millilitre (mL)</option><option value="m3">Cubic metre (m3)</option><option value="gal_us" selected>US gallon</option><option value="gal_uk">UK gallon</option><option value="qt_us">US quart</option><option value="pt_us">US pint</option><option value="cup_us">US cup</option><option value="fl_oz_us">US fluid ounce</option><option value="tsp">Teaspoon</option><option value="tbsp">Tablespoon</option></select></div>
+</div>
+<div class="result-box" id="res-volume"></div>
+<p class="formula" id="formula-volume"></p>
+</div>
+
+<div class="converter" style="display:none" data-cat="speed">
+<h2>Unit Converter</h2>
+<div class="conv-row">
+<div class="conv-field"><label for="amt-speed">Amount</label><input id="amt-speed" type="number" value="1" step="any"></div>
+<div class="conv-field"><label for="from-speed">From</label><select id="from-speed"><option value="ms">Metre per second (m/s)</option><option value="kmh" selected>Kilometre per hour (km/h)</option><option value="mph">Mile per hour (mph)</option><option value="kn">Knot (kn)</option><option value="fts">Foot per second (ft/s)</option></select></div>
+<button class="swap-btn" type="button" data-cat="speed" title="Swap units">&#8646;</button>
+<div class="conv-field"><label for="to-speed">To</label><select id="to-speed"><option value="ms">Metre per second (m/s)</option><option value="kmh">Kilometre per hour (km/h)</option><option value="mph" selected>Mile per hour (mph)</option><option value="kn">Knot (kn)</option><option value="fts">Foot per second (ft/s)</option></select></div>
+</div>
+<div class="result-box" id="res-speed"></div>
+<p class="formula" id="formula-speed"></p>
+</div>
+</div>
+</div>
+<main>
+<section><h2 class="sec">More converters</h2><p class="sec-sub">Dedicated converters for the measurements you use most.</p>
+<div class="tool-grid">
+<a class="tool-card" href="tools/length-converter.html"><h3>Length Converter</h3><p>Convert metres, kilometres, miles, feet, inches and more.</p></a><a class="tool-card" href="tools/weight-converter.html"><h3>Weight Converter</h3><p>Convert kilograms, grams, pounds, ounces and stones.</p></a><a class="tool-card" href="tools/temperature-converter.html"><h3>Temperature Converter</h3><p>Convert Celsius, Fahrenheit and Kelvin exactly.</p></a><a class="tool-card" href="tools/volume-converter.html"><h3>Volume Converter</h3><p>Convert litres, gallons, quarts, pints, cups and spoons.</p></a>
+</div></section>
+<section><h2 class="sec">Guides: units and measurement</h2><p class="sec-sub">Practical, original guides that explain the units behind the numbers.</p>
+<div class="article-grid">
+<a class="article-card" href="/guides/metric-vs-imperial.html"><img src="/images/metric-vs-imperial.jpg" alt="Metric vs Imperial: Which Measurement System Measures the World?" loading="lazy"><div class="card-body"><h3>Metric vs Imperial: Which Measurement System Measures the World?</h3><p>A clear comparison of the metric and imperial systems — their history, where each is used, and how to convert between them with confidence.</p></div></a><a class="article-card" href="/guides/how-to-convert-length.html"><img src="/images/how-to-convert-length.jpg" alt="How to Convert Length Units Accurately" loading="lazy"><div class="card-body"><h3>How to Convert Length Units Accurately</h3><p>A practical guide to converting length — metres, feet, inches, miles and kilometres — with exact factors, mental shortcuts and common mistakes to avoid.</p></div></a><a class="article-card" href="/guides/converting-weight-pounds-kilograms.html"><img src="/images/converting-weight-pounds-kilograms.jpg" alt="Pounds to Kilograms and Back: A Complete Weight Conversion Guide" loading="lazy"><div class="card-body"><h3>Pounds to Kilograms and Back: A Complete Weight Conversion Guide</h3><p>Learn to convert weight between pounds, kilograms, grams, ounces and stones — with exact factors, everyday examples and tips for cooking, travel and fitness.</p></div></a><a class="article-card" href="/guides/temperature-conversion-guide.html"><img src="/images/temperature-conversion-guide.jpg" alt="Celsius, Fahrenheit and Kelvin: The Complete Temperature Conversion Guide" loading="lazy"><div class="card-body"><h3>Celsius, Fahrenheit and Kelvin: The Complete Temperature Conversion Guide</h3><p>Understand the three temperature scales, how they relate, and how to convert between them — with the formulas, everyday reference points and common mistakes.</p></div></a><a class="article-card" href="/guides/cooking-measurement-conversions.html"><img src="/images/cooking-measurement-conversions.jpg" alt="Cooking Measures: Cups, Grams, Millilitres and Tablespoons Explained" loading="lazy"><div class="card-body"><h3>Cooking Measures: Cups, Grams, Millilitres and Tablespoons Explained</h3><p>A cook&#x27;s guide to converting recipe measurements — cups to grams, millilitres to fluid ounces, and why weighing ingredients beats measuring them.</p></div></a><a class="article-card" href="/guides/speed-conversion-guide.html"><img src="/images/speed-conversion-guide.jpg" alt="Speed Conversions: mph, km/h, Knots and Metres per Second" loading="lazy"><div class="card-body"><h3>Speed Conversions: mph, km/h, Knots and Metres per Second</h3><p>How to convert speed between miles per hour, kilometres per hour, knots and metres per second — with the exact factors and the numbers travellers actually need.</p></div></a><a class="article-card" href="/guides/volume-conversions-litres-gallons.html"><img src="/images/volume-conversions-litres-gallons.jpg" alt="Litres, Gallons and Millilitres: A Complete Volume Conversion Guide" loading="lazy"><div class="card-body"><h3>Litres, Gallons and Millilitres: A Complete Volume Conversion Guide</h3><p>Convert volume confidently — litres, US and UK gallons, quarts, pints, cups and fluid ounces — and learn where the two gallons differ and why it matters.</p></div></a><a class="article-card" href="/guides/area-conversion-guide.html"><img src="/images/area-conversion-guide.jpg" alt="Converting Area: Square Metres, Acres, Hectares and Square Feet" loading="lazy"><div class="card-body"><h3>Converting Area: Square Metres, Acres, Hectares and Square Feet</h3><p>A practical guide to area conversion — square metres, square feet, acres, hectares and square miles — for property, land, building and gardening.</p></div></a><a class="article-card" href="/guides/history-of-measurement.html"><img src="/images/history-of-measurement.jpg" alt="A Short History of Measurement: From Body Parts to the Metric System" loading="lazy"><div class="card-body"><h3>A Short History of Measurement: From Body Parts to the Metric System</h3><p>How humanity went from measuring with feet, hands and grains of barley to the precise International System of Units we use today.</p></div></a><a class="article-card" href="/guides/converting-units-for-travel.html"><img src="/images/converting-units-for-travel.jpg" alt="Unit Conversions Every Traveller Needs" loading="lazy"><div class="card-body"><h3>Unit Conversions Every Traveller Needs</h3><p>The essential conversions for travel — distances, speeds, temperatures, fuel, weights and clothing sizes — so you never get caught out abroad.</p></div></a><a class="article-card" href="/guides/metric-prefixes-explained.html"><img src="/images/metric-prefixes-explained.jpg" alt="Metric Prefixes Explained: Milli, Centi, Kilo and Beyond" loading="lazy"><div class="card-body"><h3>Metric Prefixes Explained: Milli, Centi, Kilo and Beyond</h3><p>A clear guide to metric prefixes — from yocto to yotta — how they work, where they are used, and how to convert between them without confusion.</p></div></a><a class="article-card" href="/guides/converting-pressure-units.html"><img src="/images/converting-pressure-units.jpg" alt="Pressure Units Explained: PSI, Bar, Pascal and Atmospheres" loading="lazy"><div class="card-body"><h3>Pressure Units Explained: PSI, Bar, Pascal and Atmospheres</h3><p>A practical guide to pressure units — PSI, bar, pascal, atmosphere and torr — with exact conversions and everyday examples from tyres to weather.</p></div></a><a class="article-card" href="/guides/energy-units-explained.html"><img src="/images/energy-units-explained.jpg" alt="Energy Units Explained: Joules, Calories and Kilowatt-hours" loading="lazy"><div class="card-body"><h3>Energy Units Explained: Joules, Calories and Kilowatt-hours</h3><p>Understand energy units — joules, calories, kilowatt-hours and BTUs — how they relate, and how to convert them for food, electricity and heating.</p></div></a><a class="article-card" href="/guides/data-storage-units.html"><img src="/images/data-storage-units.jpg" alt="Bytes, Kilobytes, Gigabytes: Data Storage Units Explained" loading="lazy"><div class="card-body"><h3>Bytes, Kilobytes, Gigabytes: Data Storage Units Explained</h3><p>Understand data units — bits, bytes, kilobytes, megabytes, gigabytes and terabytes — the decimal vs binary trap, and how to work out what you really need.</p></div></a><a class="article-card" href="/guides/converting-time-units.html"><img src="/images/converting-time-units.jpg" alt="Time Units: Seconds, Minutes, Hours, Days and Beyond" loading="lazy"><div class="card-body"><h3>Time Units: Seconds, Minutes, Hours, Days and Beyond</h3><p>A guide to converting time — seconds to hours, days to weeks, months to years — with the awkward truths about months, leap years and time zones.</p></div></a><a class="article-card" href="/guides/fuel-consumption-conversions.html"><img src="/images/fuel-consumption-conversions.jpg" alt="MPG vs Litres per 100 km: Fuel Consumption Conversions Explained" loading="lazy"><div class="card-body"><h3>MPG vs Litres per 100 km: Fuel Consumption Conversions Explained</h3><p>How to convert fuel economy between miles per gallon, litres per 100 km and kilometres per litre — with the US vs UK gallon trap explained.</p></div></a><a class="article-card" href="/guides/shoe-size-conversion.html"><img src="/images/shoe-size-conversion.jpg" alt="Shoe Size Conversion: US, UK, EU and Japanese Sizes Explained" loading="lazy"><div class="card-body"><h3>Shoe Size Conversion: US, UK, EU and Japanese Sizes Explained</h3><p>A complete shoe size conversion guide — US, UK, European and Japanese sizing, how to measure your feet, and why sizes vary between brands.</p></div></a><a class="article-card" href="/guides/clothing-size-conversion.html"><img src="/images/clothing-size-conversion.jpg" alt="Clothing Sizes Compared: US, UK and EU Sizes Explained" loading="lazy"><div class="card-body"><h3>Clothing Sizes Compared: US, UK and EU Sizes Explained</h3><p>A guide to clothing size conversion — US, UK and European sizes for men and women, how to measure yourself, and why sizes vary so much.</p></div></a><a class="article-card" href="/guides/precision-and-rounding-in-conversions.html"><img src="/images/precision-and-rounding-in-conversions.jpg" alt="Precision, Rounding and Significant Figures in Conversions" loading="lazy"><div class="card-body"><h3>Precision, Rounding and Significant Figures in Conversions</h3><p>How to round converted measurements sensibly — significant figures, decimal places, and when precision matters versus when it just looks impressive.</p></div></a><a class="article-card" href="/guides/science-lab-unit-conversions.html"><img src="/images/science-lab-unit-conversions.jpg" alt="Unit Conversions in the Science Lab: A Practical Guide" loading="lazy"><div class="card-body"><h3>Unit Conversions in the Science Lab: A Practical Guide</h3><p>How scientists convert units in the laboratory — SI units, moles, molarity, and the dimensional analysis method that catches errors before they happen.</p></div></a>
+</div></section>
+<section><h2 class="sec">Why use this converter?</h2>
+<p>Every conversion uses exact, defined factors — one inch is exactly 25.4 millimetres, one pound is exactly 453.59237 grams — so the result is as accurate as the number you type in. The tool works offline once loaded, never sends your numbers anywhere, and shows its working so you can check the result yourself.</p></section>
+</main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>
