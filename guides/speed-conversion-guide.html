@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed Conversions: mph, km/h, Knots and Metres per Second | Unit Converter</title>
+<meta name="description" content="How to convert speed between miles per hour, kilometres per hour, knots and metres per second — with the exact factors and the numbers travellers actually need.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Speed Conversions: mph, km/h, Knots and Metres per Second</p>
+<h1>Speed Conversions: mph, km/h, Knots and Metres per Second</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/speed-conversion-guide.jpg" alt="Speed Conversions: mph, km/h, Knots and Metres per Second">
+<p>Speed limits change the moment you cross a border. A motorway that allows 130 kilometres per hour in France allows 70 miles per hour in Britain and 65 miles per hour in much of the United States, and those numbers are not the same speed at all. Pilots talk in knots, scientists in metres per second, and cyclists in kilometres per hour. Knowing how to move between these units keeps you legal on the road, safe on the water and accurate in the lab.</p>
+<h2>The four main speed units</h2>
+<p>The kilometre per hour is the standard road speed unit in most of the world. One kilometre per hour is exactly one thousand metres per 3,600 seconds, or about 0.278 metres per second. The mile per hour is used in the United States, the United Kingdom and a handful of other countries; one mile per hour equals 0.44704 metres per second. The knot, used in aviation and shipping, is one nautical mile per hour, or 1.852 kilometres per hour. The metre per second is the scientific standard and the unit used in physics and weather reports.</p>
+<p>Converting between them is straightforward once you know the factors. Multiply kilometres per hour by 0.621371 to get miles per hour, and multiply miles per hour by 1.609344 to get kilometres per hour. Multiply knots by 1.852 to get kilometres per hour, and by 1.15078 to get miles per hour. Divide kilometres per hour by 3.6 to get metres per second, and multiply metres per second by 3.6 to go back. These factors are exact, so a converter using them will always be right.</p>
+<h2>Speed limits around the world</h2>
+<p>Road speed limits are the most common reason people convert speed. In most of Europe the motorway limit is 120 or 130 kilometres per hour, which is 75 or 81 miles per hour. In Britain the motorway limit is 70 miles per hour, or 113 kilometres per hour. In the United States limits vary by state from 55 to 85 miles per hour, which is 89 to 137 kilometres per hour. In built-up areas, 50 kilometres per hour is the norm in Europe — 31 miles per hour — while 30 miles per hour in Britain is 48 kilometres per hour.</p>
+<p>The numbers that matter most are the low ones, because towns and cities are where speeding fines are most common. Thirty kilometres per hour, increasingly common in European city centres, is just 19 miles per hour. Fifty kilometres per hour is 31 miles per hour. Sixty kilometres per hour is 37 miles per hour. If you are driving a rental car with a speedometer in the other system, learn these three numbers before you leave the car park, and remember that speed cameras do not accept confusion as an excuse.</p>
+<h2>Knots, aviation and sailing</h2>
+<p>The knot survives because it fits the way the Earth is measured. One knot is one nautical mile per hour, and one nautical minute of latitude is one nautical mile, so a ship travelling at ten knots covers ten minutes of latitude every hour. That neat relationship between speed, distance and position on a chart is why sailors and pilots have never switched to kilometres per hour. A typical airliner cruises at around 470 knots, which is 870 kilometres per hour or 540 miles per hour. A sailing yacht in a good breeze might make eight knots, or about 15 kilometres per hour.</p>
+<h2>Speed in sport and science</h2>
+<p>Athletes live in kilometres per hour: a good club cyclist rides at 30 to 35 kilometres per hour, an elite marathon runner averages just over 20 kilometres per hour, and a sprint cyclist can exceed 70 kilometres per hour on a descent. In the United States the same speeds are quoted in miles per hour, so a 20 mile per hour cycling pace is about 32 kilometres per hour. Swimmers are measured in minutes per hundred metres, which converts to about 5.4 kilometres per hour for a strong amateur and over 7 for an elite racer.</p>
+<p>Scientists use metres per second because it fits the rest of the metric system: combine it with kilograms and seconds and you get joules, watts and newtons without any conversion factors. The speed of sound in air is about 343 metres per second, or 1,235 kilometres per hour. The speed of light is 299,792,458 metres per second — fast enough to circle the Earth seven and a half times in one second. When you see a speed in metres per second, multiply by 3.6 to picture it in kilometres per hour.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How fast is 100 km/h in mph?</strong><br>100 km/h is 62.1 mph.</p>
+<p><strong>What is a knot in km/h?</strong><br>One knot is 1.852 km/h.</p>
+<p><strong>How do I convert m/s to km/h?</strong><br>Multiply by 3.6. Ten metres per second is 36 km/h.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

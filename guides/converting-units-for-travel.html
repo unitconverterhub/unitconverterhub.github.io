@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Conversions Every Traveller Needs | Unit Converter</title>
+<meta name="description" content="The essential conversions for travel — distances, speeds, temperatures, fuel, weights and clothing sizes — so you never get caught out abroad.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Unit Conversions Every Traveller Needs</p>
+<h1>Unit Conversions Every Traveller Needs</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/converting-units-for-travel.jpg" alt="Unit Conversions Every Traveller Needs">
+<p>Travel is the moment when unit conversion stops being a classroom exercise and becomes a practical survival skill. The road signs change, the weather forecast uses a different scale, the fuel is sold by the litre, the luggage limit is in kilograms and the shop sizes make no sense at all. A traveller who can convert the essentials will drive legally, dress appropriately, pack within the limit and order the right amount of food. This guide covers the conversions that matter most on the road.</p>
+<h2>Distance and speed on the road</h2>
+<p>The first conversion a traveller meets is usually on the road. If you are used to miles and you rent a car in Europe, the speedometer reads kilometres per hour and the signs are in kilometres. Learn three numbers before you drive: 50 kilometres per hour is 31 miles per hour, 90 kilometres per hour is 56 miles per hour, and 130 kilometres per hour is 81 miles per hour. In the other direction, 30 miles per hour is 48 kilometres per hour, 60 is 97, and 70 is 113. Distances work the same way: 100 kilometres is 62 miles, so a sign saying the next city is 150 kilometres away means about 93 miles.</p>
+<p>Walking and hiking distances need conversion too. A trail described as a 10-kilometre hike is about 6.2 miles, and a 5-mile walk is about 8 kilometres. If you are used to judging distances in miles, multiply kilometres by 0.6 for a quick estimate. For running, a 5K race is 3.1 miles and a 10K is 6.2 miles. Keep the five-eighths rule in mind: five miles equals eight kilometres, which makes most conversions a simple bit of mental arithmetic.</p>
+<h2>Temperature and weather</h2>
+<p>Weather forecasts are the second conversion every traveller meets, and getting them wrong means packing the wrong clothes. Twenty degrees Celsius is a pleasant 68 Fahrenheit, 25 is a warm 77, 30 is a hot 86 and 35 is a scorching 95. On the cold side, zero Celsius is freezing at 32 Fahrenheit, minus 5 is 23 Fahrenheit and minus 10 is 14. A quick mental conversion is to double the Celsius number and add 30 — 20 doubled is 40, plus 30 is 70, close to the exact 68. The approximation is good enough to decide whether to pack a jacket.</p>
+<h2>Fuel, food and drink</h2>
+<p>Fuel is sold by the litre in most of the world and by the gallon in the United States, which makes comparing prices confusing. A litre is 0.264 US gallons, so a price of one euro per litre is about 3.79 euros per gallon — but the currency is different too, so the honest comparison needs a currency converter as well as a volume converter. Fuel economy is quoted in litres per 100 kilometres in most countries and miles per gallon in the United States, and converting between them is not intuitive: 8 litres per 100 kilometres is about 29 miles per US gallon, and 30 miles per gallon is about 7.8 litres per 100 kilometres.</p>
+<p>Food and drink measures change too. A pint of beer in Britain is 568 millilitres, while a pint in the United States is 473 millilitres — order a pint in each country and you get a different amount. A cup of coffee might be 150 millilitres in Europe and 240 in the United States. Meat and cheese are sold by weight: 100 grams is about a quarter of a pound, 500 grams is just over a pound, and a kilogram is 2.2 pounds. Learn these few numbers and the market becomes much less confusing.</p>
+<h2>Luggage, clothing and sizes</h2>
+<p>Luggage limits are usually quoted in kilograms outside the United States and pounds inside it. A 23-kilogram checked bag is 50.7 pounds, a 20-kilogram bag is 44 pounds, and a 7-kilogram cabin bag is 15.4 pounds. Weigh your bag before you leave home: stand on a bathroom scale holding the bag, then without it, and subtract. Remember that the limit includes the bag itself, and that a heavy suitcase can take two or three kilograms of your allowance.</p>
+<p>Clothing and shoe sizes are a separate puzzle with no simple formula, because sizes are arbitrary numbers rather than measurements. A US women's size 8 is a UK size 12 and a European size 40. A US men's shoe size 10 is a UK size 9 and a European size 43. The only reliable approach is to measure your feet in centimetres and check the brand's size chart, because sizes vary between brands even within the same country. When in doubt, try the clothes on — a fitting room is more reliable than any conversion table.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>What is 100 km in miles?</strong><br>100 kilometres is 62.1 miles.</p>
+<p><strong>How do I convert Celsius to Fahrenheit quickly?</strong><br>Double the Celsius number and add 30 for a close estimate.</p>
+<p><strong>How many kg is a 50 lb luggage limit?</strong><br>50 pounds is 22.7 kilograms.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

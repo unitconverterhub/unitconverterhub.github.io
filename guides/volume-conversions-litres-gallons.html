@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Litres, Gallons and Millilitres: A Complete Volume Conversion Guide | Unit Converter</title>
+<meta name="description" content="Convert volume confidently — litres, US and UK gallons, quarts, pints, cups and fluid ounces — and learn where the two gallons differ and why it matters.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Litres, Gallons and Millilitres: A Complete Volume Conversion Guide</p>
+<h1>Litres, Gallons and Millilitres: A Complete Volume Conversion Guide</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/volume-conversions-litres-gallons.jpg" alt="Litres, Gallons and Millilitres: A Complete Volume Conversion Guide">
+<p>Volume is the measurement that causes the most confusion between countries, because the gallon — the largest everyday volume unit — is not the same on both sides of the Atlantic. A US gallon holds 3.785 litres, while a UK gallon holds 4.546 litres, a difference of twenty percent. Fill a car in London and in Los Angeles with the same number of gallons and you will have bought very different amounts of fuel. This guide untangles the two gallon systems and every smaller unit that hangs off them.</p>
+<h2>The two gallons</h2>
+<p>The US gallon is defined as exactly 231 cubic inches, or 3.785411784 litres. The UK gallon, also called the imperial gallon, is defined as the volume of ten pounds of water, which works out to 4.54609 litres. The two diverged in the nineteenth century when Britain redefined its gallon and the United States kept the older Queen Anne wine gallon. Today the UK gallon is used mainly for fuel economy figures and in a few traditional contexts, while the US gallon is used for fuel, milk and most liquids in the United States.</p>
+<p>The difference matters most when comparing fuel economy. A car that does 30 miles per US gallon does 36 miles per UK gallon, because the UK gallon is bigger — the same car, the same fuel, a different number. When reading a car review from another country, always check which gallon is meant before comparing. The same applies to recipes: an old British recipe calling for a gallon of milk means 4.5 litres, while an American one means 3.8 litres.</p>
+<h2>Quarts, pints, cups and fluid ounces</h2>
+<p>Both gallon systems divide into quarts and pints, but the sizes differ. A US gallon contains four US quarts of 0.946 litres each, and each quart contains two US pints of 0.473 litres. A UK gallon contains four UK quarts of 1.136 litres, and each quart contains two UK pints of 0.568 litres — the famous British pint of beer. A US pint is about 83 percent of a UK pint, which is why an American pint glass looks disappointingly small in a London pub.</p>
+<p>Below the pint, the systems diverge further. The US cup is 236.6 millilitres, the US fluid ounce is 29.57 millilitres, and there are eight fluid ounces in a US cup. The UK does not use cups or fluid ounces in the same way; British recipes measure liquids in millilitres and use the pint as the large unit. A US tablespoon is 14.8 millilitres and a teaspoon is 4.9 millilitres. When a recipe says a cup, check the author's country first — it is the single most important question in volume conversion.</p>
+<h2>Metric volume: litres and millilitres</h2>
+<p>The metric system makes volume simple: one litre is exactly one cubic decimetre, and one millilitre is one cubic centimetre. A litre of water weighs exactly one kilogram, which ties volume neatly to mass — a relationship no imperial unit can match. A cubic metre holds one thousand litres, which is why water bills and swimming pools are measured in cubic metres. A millilitre is small enough for medicine doses, and a litre is a sensible size for a bottle of water or a carton of milk.</p>
+<p>Converting metric volume to imperial is a matter of knowing a few factors. One litre is 0.264 US gallons, 0.22 UK gallons, 1.057 US quarts, 2.113 US pints and 33.8 US fluid ounces. One millilitre is 0.035 US fluid ounces. For everyday purposes, a litre is roughly a quart plus a little extra, and a 500-millilitre bottle is just over a US pint. When buying a car, remember that engine sizes quoted in litres convert to cubic inches by multiplying by 61 — a 2.0-litre engine is 122 cubic inches.</p>
+<h2>Volume in everyday life</h2>
+<p>Fuel is where most people meet volume conversion, and the numbers are worth knowing. A litre of petrol costs more than a gallon sounds like it should, because a gallon contains nearly four litres — a price of one dollar per litre is about 3.79 dollars per US gallon. A typical car fuel tank holds 40 to 60 litres, or 10 to 16 US gallons. A bathtub holds about 150 litres, a washing machine uses 50 to 100 litres per cycle, and an average person uses about 150 litres of water per day at home.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How many litres in a US gallon?</strong><br>A US gallon is 3.785 litres.</p>
+<p><strong>How many litres in a UK gallon?</strong><br>A UK gallon is 4.546 litres — 20 percent larger than a US gallon.</p>
+<p><strong>How many millilitres in a US pint?</strong><br>A US pint is 473 millilitres; a UK pint is 568 millilitres.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

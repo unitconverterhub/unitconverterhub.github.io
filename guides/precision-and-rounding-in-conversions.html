@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision, Rounding and Significant Figures in Conversions | Unit Converter</title>
+<meta name="description" content="How to round converted measurements sensibly — significant figures, decimal places, and when precision matters versus when it just looks impressive.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Precision, Rounding and Significant Figures in Conversions</p>
+<h1>Precision, Rounding and Significant Figures in Conversions</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/precision-and-rounding-in-conversions.jpg" alt="Precision, Rounding and Significant Figures in Conversions">
+<p>A converter can tell you that 10 miles is 16.09344 kilometres, but writing down all seven digits is usually a mistake. The extra digits imply a precision that your original measurement never had, and they make your answer harder to read. Knowing how many digits to keep — and when precision genuinely matters — is a skill that separates a careful measurer from a careless one. This guide explains significant figures, sensible rounding and the situations where every decimal place counts.</p>
+<h2>Significant figures explained</h2>
+<p>Significant figures are the digits in a number that carry real meaning. Ten miles measured with a car odometer might be accurate to the nearest mile, so it has two significant figures, and converting it to kilometres should give 16 kilometres — not 16.09344. The rule is simple: your answer cannot be more precise than your least precise measurement. If you measured a room as 3.5 metres, you know it to two significant figures, so the answer in feet should be 11 feet, not 11.482939 feet.</p>
+<p>The trap is that calculators and converters give you as many digits as they can, which looks authoritative but is often meaningless. A kitchen scale that reads to the nearest gram cannot tell you that a recipe needs 123.456 grams of flour — it can only tell you 123 grams. When you see a long string of decimals in a converted answer, ask yourself how precisely the original was measured, and round the answer to match. Two or three significant figures are enough for almost all everyday purposes.</p>
+<h2>How to round sensibly</h2>
+<p>For everyday conversions, round to a sensible number of decimal places. Distances in kilometres usually need one decimal place at most — 16.1 kilometres, not 16.09344. Weights in kilograms need one or two decimals — 68.0 kilograms, not 68.038855. Temperatures need one decimal at most — 20.5 degrees, not 20.555556. Money needs two decimals. The goal is to keep enough digits to be useful and few enough to be readable, and to avoid implying that you know more than you do.</p>
+<p>When rounding, follow the standard rule: if the next digit is five or more, round up; if it is less than five, round down. Be careful with repeated rounding — round only once, at the end of the calculation, because rounding at each step accumulates error. And when a conversion feeds into another calculation, keep the full precision internally and round only the final answer. A spreadsheet or converter does this automatically, which is another reason to use one rather than doing conversions by hand.</p>
+<h2>When precision really matters</h2>
+<p>Some situations demand every decimal place. In medicine, a drug dose calculated from body weight must be exact, because a ten percent error can be dangerous. In engineering, a part machined to the wrong tolerance will not fit, and a bridge built with rounded numbers could fail. In science, measurements are reported with their uncertainty, so a length might be written as 1.234 plus or minus 0.001 metres — the uncertainty tells you exactly how much the digits mean.</p>
+<p>In these fields, conversion factors are used at full precision and the result is rounded only to the precision the instruments support. The inch is defined as exactly 25.4 millimetres, so there is no rounding error in the factor itself — the only question is how precisely the original measurement was made. If you are working in one of these fields, keep a record of the precision of every measurement you use, and never let a converter's extra digits fool you into thinking you know more than your instruments can tell you.</p>
+<h2>Common rounding mistakes</h2>
+<p>The most common rounding mistake is rounding too early. If you convert 100 miles to kilometres by first rounding the factor to 1.6, you get 160 kilometres instead of 160.93 — an error of nearly a kilometre. If you then convert that result back to miles, the error grows. Always use the full conversion factor and round only at the end. Another mistake is rounding to a fixed number of decimal places regardless of the size of the number: 0.001 kilometres needs three decimals, but 1,000 kilometres needs none.</p>
+<p>A subtler mistake is confusing precision with accuracy. A measurement can be precise — repeated readings agree with each other — but inaccurate, because the instrument is wrongly calibrated. A scale that always reads two kilograms too heavy is precise but not accurate. Converting its readings to pounds will not fix the error; it will just express the same error in different units. Always calibrate your instruments, check them against a known standard, and record the uncertainty alongside the measurement.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How many significant figures should I keep?</strong><br>Match the precision of your original measurement — usually two or three for everyday use.</p>
+<p><strong>Should I round during a calculation?</strong><br>No — round only the final answer to avoid accumulating error.</p>
+<p><strong>Is 10 miles 16 or 16.09 kilometres?</strong><br>16.09 if the 10 miles was measured precisely; 16 if it was approximate.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

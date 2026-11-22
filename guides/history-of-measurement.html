@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Short History of Measurement: From Body Parts to the Metric System | Unit Converter</title>
+<meta name="description" content="How humanity went from measuring with feet, hands and grains of barley to the precise International System of Units we use today.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; A Short History of Measurement: From Body Parts to the Metric System</p>
+<h1>A Short History of Measurement: From Body Parts to the Metric System</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/history-of-measurement.jpg" alt="A Short History of Measurement: From Body Parts to the Metric System">
+<p>Every unit of measurement began as something a person could see, hold or walk. The foot was a foot, the inch was the width of a thumb, the yard was the length of an outstretched arm, and the grain was a single seed of barley. These body-based measures were practical but chaotic: a foot in one town was not a foot in the next, and a merchant crossing a border could be cheated by a different-sized bushel. The story of measurement is the story of humanity slowly replacing the body with something more reliable.</p>
+<h2>Measuring with the body</h2>
+<p>The earliest measures were the body itself. The cubit, used in Egypt and Mesopotamia, was the length from the elbow to the tip of the middle finger — about 45 to 52 centimetres depending on whose arm was used. Egyptian builders kept a royal cubit rod carved in stone as the official standard, and workers compared their own measuring rods against it. The foot, the hand, the span and the fathom all worked the same way: a familiar body part turned into a portable ruler that anyone could use without tools.</p>
+<p>The problem was variation. A tall king had a longer cubit than a short one, and a merchant's foot was not the same as a customer's. Medieval Europe had hundreds of local measures: a mile in one town might be 1,000 paces and in the next 1,500. Cloth was sold by the ell, which ranged from 45 centimetres in Scotland to 114 centimetres in Flanders. Trade suffered, taxes were disputed, and builders had to relearn the local measures every time they moved to a new city.</p>
+<h2>The birth of standard measures</h2>
+<p>The first great standardisation came in France during the Revolution. In 1790 the French Academy of Sciences proposed a unit based not on a king's body but on the Earth itself: the metre was defined as one ten-millionth of the distance from the North Pole to the equator. A platinum bar was made to embody that length, and the metric system was built around it with decimal multiples. Napoleon spread the metric system across Europe by conquest, and by the late nineteenth century most of the world had adopted it.</p>
+<p>Britain took a different path, standardising its traditional units instead of replacing them. The Imperial system of 1824 defined the yard, the pound and the gallon by reference to physical standards kept in London, and the British Empire carried those standards worldwide. The United States kept the older English measures after independence. Both approaches worked, but they left the world with two systems that still coexist today, and every engineer and cook still has to translate between them.</p>
+<h2>The modern SI system</h2>
+<p>The twentieth century replaced physical objects with the constants of nature. In 1960 the metric system was formalised as the International System of Units, and in 2019 the last physical standard — the kilogram, a cylinder of platinum-iridium kept in a vault in Paris — was replaced by a definition based on the Planck constant. Today every SI unit is defined by a fixed value of a fundamental constant of physics, which means a kilogram measured anywhere in the universe is the same kilogram.</p>
+<p>The result is a system of extraordinary precision. A metre is now defined by the distance light travels in a fraction of a second, a second is defined by the vibrations of a caesium atom, and a kelvin is defined by the Boltzmann constant. These definitions cannot wear out, cannot be lost in a fire, and do not depend on any king's foot. For ordinary people the change is invisible — a metre is still a metre — but for science it means measurements made today can be compared with measurements made a thousand years from now.</p>
+<h2>Why old units refuse to die</h2>
+<p>Despite the elegance of the metric system, old units survive wherever they feel more human. People describe their height in feet and inches because those numbers are small and familiar. Cooks use cups because a cup is a convenient handful. Sailors use knots because the unit fits the geometry of the Earth. Pilots measure altitude in feet because aviation grew up in the imperial world. These units persist not because they are better, but because they are embedded in habit, language and the tools people already own.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>What was the first standard unit of length?</strong><br>The Egyptian royal cubit — a stone rod kept as the official standard — is one of the earliest known.</p>
+<p><strong>When was the metre defined?</strong><br>The metre was first defined in France in the 1790s as a fraction of the Earth&#x27;s circumference.</p>
+<p><strong>What is the SI system?</strong><br>The International System of Units — the modern metric system, defined by constants of nature since 2019.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

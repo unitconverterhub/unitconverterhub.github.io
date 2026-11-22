@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metric Prefixes Explained: Milli, Centi, Kilo and Beyond | Unit Converter</title>
+<meta name="description" content="A clear guide to metric prefixes — from yocto to yotta — how they work, where they are used, and how to convert between them without confusion.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Metric Prefixes Explained: Milli, Centi, Kilo and Beyond</p>
+<h1>Metric Prefixes Explained: Milli, Centi, Kilo and Beyond</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/metric-prefixes-explained.jpg" alt="Metric Prefixes Explained: Milli, Centi, Kilo and Beyond">
+<p>The metric system owes its power to a short list of prefixes: tiny words that scale any unit up or down by a factor of ten. Milli means a thousandth, centi means a hundredth, kilo means a thousand, and mega means a million. Learn twenty of these prefixes and you can read any measurement in science, computing, medicine or engineering. This guide explains what each prefix means, where you will meet it, and how to convert between them in seconds.</p>
+<h2>The everyday prefixes</h2>
+<p>Most daily life uses just six prefixes. Milli means one thousandth: a millimetre is a thousandth of a metre, a millilitre is a thousandth of a litre, and a milligram is a thousandth of a gram. Centi means one hundredth: there are one hundred centimetres in a metre. Deci means one tenth: a decilitre is a tenth of a litre. On the large side, deca means ten, hecto means one hundred, and kilo means one thousand: a kilometre is a thousand metres, a kilogram is a thousand grams, and a kilowatt is a thousand watts.</p>
+<p>Converting between these prefixes is a matter of counting zeros. One kilometre is 1,000 metres, which is 100,000 centimetres, which is 1,000,000 millimetres. One gram is 1,000 milligrams, and one litre is 1,000 millilitres. The pattern is always the same: each step up or down the prefix ladder multiplies or divides by ten. A useful habit is to convert everything to the base unit first — metres, grams, litres — and then convert to the target prefix, which keeps the arithmetic simple and the errors rare.</p>
+<h2>The big prefixes: mega, giga and tera</h2>
+<p>Beyond kilo, the prefixes jump by factors of a thousand. Mega means one million: a megabyte is a million bytes, a megawatt is a million watts, and a megapixel is a million pixels. Giga means one billion: a gigabyte is a billion bytes and a gigawatt is a billion watts. Tera means one trillion: a terabyte is a trillion bytes. Peta, exa, zetta and yotta continue the sequence, each a thousand times the last, and they are used for the largest measurements in astronomy, computing and particle physics.</p>
+<p>These large prefixes are most familiar from computing, where they describe storage and speed. A typical laptop has 512 gigabytes of storage and 16 gigabytes of memory, and a home internet connection might run at 100 megabits per second. Note the trap: computer storage is sometimes measured in binary units where a kilobyte is 1,024 bytes, but the official metric prefixes are decimal — a gigabyte is a billion bytes, not 1,073,741,824. Hard drive makers use the decimal definition, which is why a drive advertised as 1 terabyte shows up as about 931 gigabytes on your computer.</p>
+<h2>The small prefixes: micro, nano and pico</h2>
+<p>At the small end, micro means one millionth: a micrometre is a millionth of a metre, roughly the size of a bacterium, and a microgram is a millionth of a gram. Nano means one billionth: a nanometre is a billionth of a metre, the scale at which transistors and viruses are measured. Pico means one trillionth: a picosecond is a trillionth of a second, used in laser physics. Femto and atto go smaller still, into the world of atomic nuclei and particle collisions.</p>
+<p>These tiny prefixes matter in medicine and technology. A medicine dose might be measured in micrograms, a blood test in nanograms per millilitre, and a computer chip's features in nanometres. The prefixes follow the same decimal logic as the large ones: one millimetre is 1,000 micrometres, one micrometre is 1,000 nanometres, and one nanometre is 1,000 picometres. Once you know the ladder, any conversion is just counting steps of three zeros at a time.</p>
+<h2>How to convert between prefixes quickly</h2>
+<p>The fastest way to convert between metric prefixes is to write the number in scientific notation, using powers of ten. Five kilometres is 5 times 10 to the power of 3 metres. Five millimetres is 5 times 10 to the power of minus 3 metres. To convert, subtract the exponents: kilometres to millimetres is a difference of six powers of ten, so five kilometres is 5,000,000 millimetres. This method works for every prefix and every unit, and it is how scientists and engineers do conversions in their heads.</p>
+<p>For everyday conversions, a simpler approach is to memorise the common pairs: one kilometre is a thousand metres, one metre is a hundred centimetres, one centimetre is ten millimetres, one kilogram is a thousand grams, one gram is a thousand milligrams, and one litre is a thousand millilitres. With those six facts you can convert almost anything you will meet outside a laboratory. Keep a prefix table on your phone or in a notebook until the ladder feels natural — it will, faster than you expect.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>What does the prefix milli mean?</strong><br>Milli means one thousandth — a millimetre is 0.001 metres.</p>
+<p><strong>How many grams are in a kilogram?</strong><br>One kilogram is 1,000 grams.</p>
+<p><strong>What comes after giga?</strong><br>Tera — one trillion. Then peta, exa, zetta and yotta.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

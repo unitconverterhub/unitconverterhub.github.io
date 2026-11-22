@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Units: Seconds, Minutes, Hours, Days and Beyond | Unit Converter</title>
+<meta name="description" content="A guide to converting time — seconds to hours, days to weeks, months to years — with the awkward truths about months, leap years and time zones.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Time Units: Seconds, Minutes, Hours, Days and Beyond</p>
+<h1>Time Units: Seconds, Minutes, Hours, Days and Beyond</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/converting-time-units.jpg" alt="Time Units: Seconds, Minutes, Hours, Days and Beyond">
+<p>Time is the one measurement that refuses to behave like the others. Sixty seconds make a minute, sixty minutes make an hour, twenty-four hours make a day — but a month is 28, 29, 30 or 31 days, a year is 365 or 366, and a week is seven days for no reason that physics can explain. Converting time means dealing with these irregularities, and this guide shows you how to do it without tripping over them.</p>
+<h2>Seconds, minutes and hours</h2>
+<p>The second is the base unit of time, defined by the vibrations of a caesium atom: exactly 9,192,631,770 periods of its radiation. Sixty seconds make a minute, sixty minutes make an hour, and 3,600 seconds make an hour. These factors are exact and never change, which makes conversion within this range simple arithmetic. A film that runs for 150 minutes is two and a half hours, a journey of 5,400 seconds is an hour and a half, and a working week of 40 hours is 144,000 seconds.</p>
+<p>For longer periods, convert to hours first and then to days. A week is 168 hours, a month of 30 days is 720 hours, and a year is 8,760 hours — 8,784 in a leap year. When converting a duration given in hours into days and hours, divide by 24 and keep the remainder: 50 hours is two days and two hours, and 100 hours is four days and four hours. For very long durations, seconds become unwieldy — a year is over 31 million seconds — so switch to days or years as soon as the numbers get large.</p>
+<h2>Days, weeks, months and years</h2>
+<p>The day is defined by the Earth's rotation: 24 hours, or 86,400 seconds. The week is seven days, a unit with no astronomical basis that survives purely by tradition. The month is the awkward one: a calendar month is 28 to 31 days, while a lunar month is about 29.53 days and a mean calendar month is 30.44 days. When converting months to days, state which month you mean — thirty days hath September is not just a rhyme, it is a practical necessity.</p>
+<p>The year is 365 days, except in leap years when it is 366. A leap year happens every four years, except for century years, which are leap years only if divisible by 400 — so 2000 was a leap year but 1900 was not. This complexity is why converting between years and days is approximate: a year is 365.25 days on average, and a decade is 3,652 or 3,653 days depending on how many leap years it contains. For legal and financial purposes, always use exact dates rather than converting years to days.</p>
+<h2>Milliseconds and microseconds</h2>
+<p>Below the second, time is measured in milliseconds (thousandths), microseconds (millionths) and nanoseconds (billionths). A millisecond is the unit of reaction time: a fast human reacts in about 200 milliseconds, and a computer screen refreshes every 16.7 milliseconds at 60 hertz. A microsecond is the unit of computer operations, and a nanosecond is the time light takes to travel about 30 centimetres. These tiny units matter in computing, photography and sport, where races are decided by hundredths of a second.</p>
+<p>Converting between these units is decimal and simple: one second is 1,000 milliseconds, one millisecond is 1,000 microseconds, and one microsecond is 1,000 nanoseconds. A camera shutter speed of 1/250th of a second is four milliseconds. A 100-metre sprint decided by 0.01 seconds was decided by ten milliseconds. When you see a time quoted in milliseconds, divide by 1,000 to get seconds — and remember that human perception cannot distinguish differences smaller than about 50 milliseconds.</p>
+<h2>Time zones and the date line</h2>
+<p>Converting clock times between places is a different kind of time conversion, and it has its own traps. The world is divided into 24 time zones, each roughly one hour apart, but the boundaries follow politics rather than geography, and some zones are offset by 30 or 45 minutes — India is UTC plus 5:30, Nepal is plus 5:45, and parts of Australia are plus 8:45. Daylight saving time adds another layer: clocks go forward in spring and back in autumn in many countries, but on different dates, and some countries do not observe it at all.</p>
+<p>The International Date Line adds a final twist: crossing it eastward subtracts a day, and crossing it westward adds one. A flight from Los Angeles to Tokyo can arrive two days after it departs by the calendar, even though the flight took eleven hours. The safest way to convert times between zones is to use a world clock or a converter that knows the current daylight saving rules, because those rules change — countries adopt, abandon and adjust daylight saving with surprising frequency.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How many seconds in a day?</strong><br>86,400 seconds — 24 hours times 3,600.</p>
+<p><strong>How many days in a year on average?</strong><br>365.25 days, because of leap years.</p>
+<p><strong>Why are there 60 seconds in a minute?</strong><br>The Babylonians used a base-60 number system, and the convention survived.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Conversions in the Science Lab: A Practical Guide | Unit Converter</title>
+<meta name="description" content="How scientists convert units in the laboratory — SI units, moles, molarity, and the dimensional analysis method that catches errors before they happen.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Unit Conversions in the Science Lab: A Practical Guide</p>
+<h1>Unit Conversions in the Science Lab: A Practical Guide</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/science-lab-unit-conversions.jpg" alt="Unit Conversions in the Science Lab: A Practical Guide">
+<p>In a science laboratory, a unit conversion error is not an inconvenience — it can ruin an experiment, waste expensive reagents, or create a safety hazard. Scientists therefore convert units with a formal method called dimensional analysis, which treats units like numbers and cancels them out step by step. This guide explains the SI units, the mole, concentration, and the method that makes conversion errors almost impossible.</p>
+<h2>The SI base units</h2>
+<p>Science runs on the International System of Units, which has seven base units: the metre for length, the kilogram for mass, the second for time, the ampere for electric current, the kelvin for temperature, the mole for amount of substance, and the candela for luminous intensity. Every other scientific unit is derived from these seven. A newton is a kilogram metre per second squared, a joule is a newton metre, and a watt is a joule per second. Because all derived units are built from the same seven bases, converting between them is a matter of algebra rather than memorisation.</p>
+<p>The 2019 redefinition of the SI system anchored all seven base units to constants of nature: the speed of light, the Planck constant, the charge of the electron, the Boltzmann constant, the Avogadro constant, and the frequency of caesium radiation. This means the units are the same everywhere in the universe and will never drift. For a working scientist, the practical consequence is simple: use SI units in every calculation, and convert any non-SI unit at the start, before it can cause trouble.</p>
+<h2>The mole and concentration</h2>
+<p>The mole is the unit chemists use to count particles: one mole contains exactly 6.02214076 times 10 to the power of 23 entities, a number called the Avogadro constant. A mole of carbon weighs 12 grams, a mole of water weighs 18 grams, and a mole of table salt weighs 58.5 grams. Chemists use moles because chemical reactions happen between particles, not between grams — one mole of acid neutralises one mole of base, whatever they weigh.</p>
+<p>Concentration is usually expressed as molarity: moles per litre of solution. A one-molar solution contains one mole of solute in each litre. To make it, you weigh out one mole of the substance, dissolve it, and add solvent until the total volume is one litre. Dilution follows a simple rule: the concentration times the volume stays constant, so a 2-molar solution diluted to twice its volume becomes 1-molar. Getting these conversions right is the difference between an experiment that works and one that does not.</p>
+<h2>Dimensional analysis: the error-catching method</h2>
+<p>Dimensional analysis is the single most useful technique in scientific conversion. Write the quantity you want to convert, multiply it by a fraction made from the conversion factor, and arrange the fraction so the unwanted unit cancels out. To convert 5 kilometres to metres, write 5 kilometres times 1,000 metres per kilometre — the kilometres cancel, leaving 5,000 metres. For a chain of conversions, multiply by several fractions in a row, cancelling one unit at a time until only the target unit remains.</p>
+<p>The beauty of the method is that it catches errors automatically. If the units do not cancel to give the unit you want, you have set up the fraction the wrong way round, and the algebra tells you so before you waste any chemicals. Students are taught to carry the units through every step of a calculation, and professional scientists do the same — it is the cheapest insurance against the kind of error that once cost a space agency a 125-million-dollar spacecraft, when one team used pounds of force and another used newtons.</p>
+<h2>Common lab conversions</h2>
+<p>Laboratory work involves a handful of conversions that come up constantly. Volumes are measured in millilitres and microlitres: one millilitre is 1,000 microlitres, and a typical pipette delivers 10 to 1,000 microlitres. Masses are measured in grams and milligrams: one gram is 1,000 milligrams, and an analytical balance reads to 0.1 milligrams. Temperatures are measured in Celsius but calculated in kelvin: add 273.15 to convert. Pressures are measured in kilopascals, bar or atmospheres, and gas volumes must be corrected for temperature and pressure before they can be compared.</p>
+<p>The most dangerous lab conversion is the one between mass and volume, because it depends on density. One millilitre of water weighs one gram, but one millilitre of concentrated sulfuric acid weighs 1.84 grams, and one millilitre of ethanol weighs 0.79 grams. Never assume that a millilitre equals a gram unless the liquid is water. Always check the density, always label every solution with its concentration and its units, and always record the units alongside every number in your notebook.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>What is dimensional analysis?</strong><br>A method of converting units by multiplying by fractions that cancel the unwanted units, catching errors automatically.</p>
+<p><strong>How many particles in a mole?</strong><br>6.022 x 10^23 — the Avogadro constant.</p>
+<p><strong>What is molarity?</strong><br>Moles of solute per litre of solution.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

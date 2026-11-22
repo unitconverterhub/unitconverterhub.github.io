@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Converting Area: Square Metres, Acres, Hectares and Square Feet | Unit Converter</title>
+<meta name="description" content="A practical guide to area conversion — square metres, square feet, acres, hectares and square miles — for property, land, building and gardening.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Converting Area: Square Metres, Acres, Hectares and Square Feet</p>
+<h1>Converting Area: Square Metres, Acres, Hectares and Square Feet</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/area-conversion-guide.jpg" alt="Converting Area: Square Metres, Acres, Hectares and Square Feet">
+<p>Area is the measurement of property, and property is where measurement mistakes cost real money. A house advertised as 2,000 square feet is about 186 square metres, a plot of half an acre is about 2,000 square metres, and a hectare is about two and a half acres. Buy a property, plan a garden or order flooring in the wrong unit and the error can cost thousands. This guide explains the units, the exact factors and the shortcuts that keep you safe.</p>
+<h2>The metric area units</h2>
+<p>Metric area starts from the square metre — the area of a square one metre on each side. One hundred square metres make an are, a unit rarely used today, and one hundred ares make a hectare, which is ten thousand square metres. A square kilometre is one million square metres, or one hundred hectares. A square centimetre is a ten-thousandth of a square metre, and a square millimetre is a millionth. The decimal structure means converting between metric area units is just a matter of moving the decimal point by the right number of places.</p>
+<p>The hectare is the workhorse of land measurement: a hectare is a square one hundred metres on each side, roughly the size of a rugby field or about two and a half American football fields. Farms, forests and parks are measured in hectares, and land prices are usually quoted per hectare or per square metre. A typical suburban building plot is 400 to 800 square metres, a large garden might be 1,000 square metres, and a small farm starts at a few hectares.</p>
+<h2>The imperial area units</h2>
+<p>Imperial area is built on the square foot, the square yard and the acre. A square yard is nine square feet, and an acre is 43,560 square feet, or 4,840 square yards — a number that comes from the old definition of an acre as a furlong by a chain. A square mile is 640 acres. A square inch is a 144th of a square foot. These relationships are not decimal, which is why converting imperial area in your head is hard and why mistakes are common.</p>
+<p>The acre remains the standard unit for land in the United States and is still used in Britain for farmland. A football field, including the end zones, covers about 1.32 acres. A typical American suburban lot is a quarter of an acre, or about 1,000 square metres. A square mile of city contains 640 acres, which is why American cities are often described by their area in square miles. When comparing property across countries, convert everything to square metres first — it is the only unit both sides understand.</p>
+<h2>Converting between the systems</h2>
+<p>One square metre equals 10.7639 square feet, so a quick conversion is to multiply square metres by 10.76 to get square feet, or divide square feet by 10.76 to get square metres. One square foot is 929 square centimetres. One acre is 4,046.86 square metres, or 0.404686 hectares, so multiply acres by 0.4047 to get hectares and multiply hectares by 2.471 to get acres. One square mile is 2.59 square kilometres, and one square kilometre is 0.386 square miles.</p>
+<p>A useful mental shortcut is that a hectare is about two and a half acres, and an acre is about 0.4 hectares. For rooms, remember that 10 square metres is about 108 square feet, 20 square metres is about 215 square feet, and 100 square metres is about 1,076 square feet. When ordering flooring, tiles or paint, always add ten percent to the converted area for cutting and waste, and always order in the unit the supplier uses — converting at the shop counter is how expensive mistakes happen.</p>
+<h2>Area in property, building and gardening</h2>
+<p>Property listings are the most common place where area conversion matters. In most of the world, homes are listed by their floor area in square metres, measured inside the external walls. In the United States the same home is listed in square feet, often measured slightly differently, so a direct comparison needs care. A two-bedroom apartment of 70 square metres is about 750 square feet; a family house of 150 square metres is about 1,600 square feet. Always ask how the area was measured before comparing two listings from different countries.</p>
+<p>In the garden, area determines how much seed, fertiliser and turf you need. Grass seed is usually sold by the kilogram with a coverage rate in square metres — typically 25 to 35 grams per square metre for a new lawn. Turf is sold by the square metre or the square yard. Paint coverage is quoted in square metres per litre, usually 10 to 12, so a 20-square-metre room with two coats needs about four litres. Measure the space in metres, convert once, and buy in the supplier's unit.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How many square feet in a square metre?</strong><br>One square metre is 10.764 square feet.</p>
+<p><strong>How many acres in a hectare?</strong><br>One hectare is 2.471 acres.</p>
+<p><strong>What is an acre in square metres?</strong><br>One acre is 4,047 square metres.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metric vs Imperial: Which Measurement System Measures the World? | Unit Converter</title>
+<meta name="description" content="A clear comparison of the metric and imperial systems — their history, where each is used, and how to convert between them with confidence.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Metric vs Imperial: Which Measurement System Measures the World?</p>
+<h1>Metric vs Imperial: Which Measurement System Measures the World?</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/metric-vs-imperial.jpg" alt="Metric vs Imperial: Which Measurement System Measures the World?">
+<p>Almost every measurement you take in daily life belongs to one of two families: the metric system or the imperial system. The metric system, built on powers of ten, is used by nearly every country on Earth, while the imperial system survives mainly in the United States, Liberia and Myanmar, and in everyday British habits such as miles on road signs and pints in pubs. Understanding both systems matters because recipes, road signs, product labels and engineering drawings switch between them constantly, and a wrong conversion can ruin a cake, a DIY project or even a scientific experiment.</p>
+<h2>How the metric system works</h2>
+<p>The metric system, formally called the International System of Units (SI), is built entirely on multiples of ten. There are seven base units — the metre for length, the kilogram for mass, the second for time, the ampere for electric current, the kelvin for temperature, the mole for amount of substance and the candela for luminous intensity — and every other unit is derived from them. Prefixes such as milli, centi and kilo scale these units up or down by factors of ten, so converting between millimetres and kilometres is simply a matter of moving a decimal point.</p>
+<p>This decimal structure is the metric system's greatest strength. A child who can count in tens can convert centimetres to metres, and a scientist can express the distance between atoms and the distance between stars with the same set of units. There are no awkward fractions to memorise, no twelve inches to a foot and no sixteen ounces to a pound. That simplicity is why the metric system became the language of international science, trade and medicine, and why most countries adopted it during the nineteenth and twentieth centuries.</p>
+<h2>Where the imperial system comes from</h2>
+<p>The imperial system grew organically out of everyday life in Britain over many centuries. A foot was once literally the length of a human foot, a yard was roughly the distance from a king's nose to his outstretched fingertip, and an acre was the area a team of oxen could plough in a day. In 1824 Britain formalised these traditional measures into the Imperial system, and the British Empire carried them around the world. The United States kept its own closely related customary units after independence, which is why American and British gallons still differ today.</p>
+<p>Imperial units feel human because they were designed around the human body and daily work. A pint is a comfortable drink, a stone is a manageable weight to lift, and a mile is a sensible walking distance. That familiarity is exactly why imperial measures have proved so hard to displace in everyday speech, even in countries that officially went metric decades ago. People still describe their height in feet and inches and their weight in stones and pounds long after the law changed.</p>
+<h2>Converting between the two systems</h2>
+<p>The most useful conversions to memorise are the everyday ones. One inch is exactly 25.4 millimetres, one foot is 30.48 centimetres, one mile is 1.609 kilometres, one pound is 453.6 grams and one US gallon is 3.785 litres. With these five facts you can convert most measurements you will meet in cooking, travel, shopping and DIY. For anything precise, use a converter rather than a rounded memory: the difference between 2.2 pounds per kilogram and the exact 2.20462 can matter when you are dosing medicine or weighing luggage at an airport.</p>
+<p>A practical trick is to anchor conversions to familiar objects. A litre of water weighs almost exactly one kilogram, a US dollar bill is about six inches long, and a kilometre is roughly a ten-minute walk. When you travel, learn the local speed limit equivalents — 50 kilometres per hour is about 31 miles per hour, and 100 kilometres per hour is about 62 miles per hour — because guessing wrong on the road is expensive. For cooking, remember that a US cup is 237 millilitres while a metric cup is 250 millilitres, a small difference that matters in baking.</p>
+<h2>Which system will win in the end?</h2>
+<p>The metric system has already won in science, medicine, international trade and almost every government on Earth. The United States remains the largest holdout, though American science, medicine and the military all use metric internally, and many US industries such as car manufacturing quietly switched years ago. Britain lives in a hybrid world: petrol is sold by the litre but distances are signed in miles, and food labels show grams while people still ask for a pound of apples at the market.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>Is the metric system used in the USA?</strong><br>No — the United States still uses its customary system for everyday life, though metric is standard in science, medicine and the military.</p>
+<p><strong>What is the easiest metric to imperial conversion?</strong><br>Length is easiest: one inch is exactly 25.4 mm, so multiply inches by 2.54 to get centimetres.</p>
+<p><strong>Why does the UK use both systems?</strong><br>Britain officially adopted metric in 1965 but kept miles on roads and pints in pubs, so daily life mixes both systems.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoe Size Conversion: US, UK, EU and Japanese Sizes Explained | Unit Converter</title>
+<meta name="description" content="A complete shoe size conversion guide — US, UK, European and Japanese sizing, how to measure your feet, and why sizes vary between brands.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Shoe Size Conversion: US, UK, EU and Japanese Sizes Explained</p>
+<h1>Shoe Size Conversion: US, UK, EU and Japanese Sizes Explained</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/shoe-size-conversion.jpg" alt="Shoe Size Conversion: US, UK, EU and Japanese Sizes Explained">
+<p>Shoe sizes are the most confusing numbers in shopping, because they are not measurements at all. A US size 10, a UK size 9 and a European size 43 can all describe the same foot, and a Japanese size 28 means something different again. Worse, the same nominal size fits differently from brand to brand. This guide explains the four main systems, how to measure your feet properly, and how to buy shoes online without the usual trial and error.</p>
+<h2>The four sizing systems</h2>
+<p>The US system is based on the barleycorn, an old unit equal to one third of an inch. A US men's size 1 is about 7.66 inches long, and each full size adds a third of an inch. Women's sizes are typically one and a half sizes larger than men's for the same foot length — a women's US 10 is roughly a men's US 8.5. The UK system is similar but offset: a UK men's size is one size smaller than the equivalent US size, so a US 10 is a UK 9.</p>
+<p>The European system is the most logical: sizes are based on the length of the foot in centimetres multiplied by 1.5, so a foot of 28 centimetres is a European size 42. The Japanese system is the simplest of all: the size is the foot length in centimetres, so a 28-centimetre foot is a Japanese size 28. Children's sizes follow the same systems with smaller numbers, and they add half sizes more frequently because children's feet grow quickly.</p>
+<h2>How to measure your feet</h2>
+<p>The only reliable way to find your size is to measure your feet in centimetres. Stand on a piece of paper with your weight evenly distributed, trace around your foot, and measure from the back of the heel to the tip of the longest toe. Do it in the evening, when feet are slightly swollen from the day, and measure both feet — most people have one foot slightly larger than the other, and you should buy for the larger one. Add half a centimetre to one centimetre of room for comfort, depending on the type of shoe.</p>
+<p>Once you know your foot length in centimetres, use the brand's size chart rather than a generic conversion table. Brands measure their shoes differently, and a size 43 from one maker can be a full centimetre longer than a size 43 from another. Running shoes are usually made with extra room in the toe, dress shoes are cut closer, and hiking boots need room for thick socks. The centimetre measurement is your anchor; the size number is just a label.</p>
+<h2>Why sizes vary between brands</h2>
+<p>Shoe sizes vary because there is no international standard for how a size is defined. Some brands measure the inside of the shoe, others measure the last — the foot-shaped mould the shoe is built on — and the two differ by the thickness of the material. Some brands add extra room for comfort, others cut their shoes narrow for a fashionable silhouette. A size 10 running shoe from one brand can be a full size different from another brand's size 10, and both can be honestly labelled.</p>
+<p>The practical consequence is that you should never order a new brand in your usual size without checking its chart. Read reviews, which often say whether a shoe runs small or large, and buy from shops with free returns when you are trying a brand for the first time. If you are between sizes, go up for running and hiking shoes, where toe room prevents blisters, and go down for snug dress shoes, which will stretch slightly with wear.</p>
+<h2>Width, fit and buying online</h2>
+<p>Length is only half the story: width matters just as much. US shoes come in widths from narrow to extra wide, marked with letters — B is narrow, D is medium for men, E is wide, and EE is extra wide. European shoes rarely offer width options, which is why people with wide feet often find American brands more comfortable. A shoe that is the right length but the wrong width will cause blisters and pain no matter how good the size conversion is.</p>
+<p>When buying online, measure your feet, check the brand's own chart, read reviews about the fit, and order from a retailer with free returns. Order two sizes if you are unsure and return the one that does not fit. Try shoes on at the end of the day, wear the socks you will use with them, and walk around the house for a few minutes before deciding. A shoe that pinches in the shop will not get better with wear — except for leather, which stretches a little — so trust your feet over the size number.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>What is a US men&#x27;s 10 in UK size?</strong><br>A US men&#x27;s 10 is a UK 9.</p>
+<p><strong>What is a European 43 in US size?</strong><br>A European 43 is roughly a US men&#x27;s 10.</p>
+<p><strong>How do I measure my foot for shoes?</strong><br>Trace your foot on paper, measure heel to longest toe in centimetres, and use the brand&#x27;s chart.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

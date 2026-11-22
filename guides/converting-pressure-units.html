@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pressure Units Explained: PSI, Bar, Pascal and Atmospheres | Unit Converter</title>
+<meta name="description" content="A practical guide to pressure units — PSI, bar, pascal, atmosphere and torr — with exact conversions and everyday examples from tyres to weather.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Pressure Units Explained: PSI, Bar, Pascal and Atmospheres</p>
+<h1>Pressure Units Explained: PSI, Bar, Pascal and Atmospheres</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/converting-pressure-units.jpg" alt="Pressure Units Explained: PSI, Bar, Pascal and Atmospheres">
+<p>Pressure is force spread over an area, and it is measured in more different units than almost any other quantity. Tyre pressures are quoted in PSI in America and bar in Europe, weather reports use hectopascals or inches of mercury, scuba divers talk in bar, and engineers calculate in pascals. A bicycle tyre at 60 PSI is about 4.1 bar, and a weather report of 1013 hectopascals is exactly one atmosphere. This guide explains the main pressure units and how to move between them.</p>
+<h2>The pascal and its multiples</h2>
+<p>The pascal is the SI unit of pressure: one pascal is one newton of force spread over one square metre. It is a very small unit — atmospheric pressure is about 101,325 pascals — so in practice people use the kilopascal (1,000 pascals) or the megapascal (1,000,000 pascals). Weather reports use the hectopascal, which is 100 pascals, so standard atmospheric pressure is 1,013.25 hectopascals. Engineers use megapascals for the strength of materials: structural steel yields at around 250 megapascals.</p>
+<p>Because the pascal is so small, everyday pressure is almost always quoted in kilopascals or in a larger traditional unit. A car tyre at 220 kilopascals is about 32 PSI. A bicycle tyre at 400 kilopascals is about 58 PSI. A pressure washer might deliver 10 megapascals, which is 100 bar. When you see a pressure in pascals, divide by 1,000 to get kilopascals, by 100,000 to get bar, and by 6,895 to get PSI — or use a converter and skip the arithmetic.</p>
+<h2>PSI and bar: the everyday units</h2>
+<p>PSI — pounds per square inch — is the standard pressure unit in the United States. It is used for tyre pressures, air compressors, water pressure and scuba tanks. One PSI is 6,894.76 pascals, or 0.0689 bar. A typical car tyre runs at 30 to 35 PSI, a road bicycle tyre at 80 to 120 PSI, and a home water supply at 40 to 60 PSI. The unit feels natural to Americans because it is built from familiar imperial units, but it is awkward for calculation because it does not fit the metric system.</p>
+<p>The bar is the everyday pressure unit in most of the rest of the world. One bar is defined as exactly 100,000 pascals, which is very close to standard atmospheric pressure (1.01325 bar). Car tyres in Europe are inflated to 2.0 to 2.5 bar, espresso machines brew at 9 bar, and scuba tanks are filled to 200 bar. To convert, multiply bar by 14.5038 to get PSI, and divide PSI by 14.5038 to get bar. A tyre at 2.2 bar is 32 PSI, and a tyre at 35 PSI is 2.4 bar.</p>
+<h2>Atmospheres, torr and inches of mercury</h2>
+<p>The atmosphere is the pressure of the air at sea level: one atmosphere is exactly 101,325 pascals, or 1.01325 bar, or 14.696 PSI. It is used in chemistry and in diving, where every ten metres of depth adds roughly one atmosphere of pressure. A scuba diver at 20 metres experiences about three atmospheres — one from the air above and two from the water. The torr, named after Evangelista Torricelli, is one 760th of an atmosphere, or 133.32 pascals, and is used to measure vacuum and blood pressure in some countries.</p>
+<p>Inches of mercury is the traditional weather unit in the United States: standard pressure is 29.92 inches of mercury. Millimetres of mercury is the same idea in metric form and is the standard unit for blood pressure — a healthy reading is around 120 over 80 millimetres of mercury. To convert, one inch of mercury is 33.8639 hectopascals, and one millimetre of mercury is 1.33322 hectopascals. These units survive because they come from the mercury barometer, the instrument that first measured air pressure.</p>
+<h2>Pressure in daily life</h2>
+<p>Tyre pressure is the pressure conversion most people actually need. Under-inflated tyres wear out faster, use more fuel and handle badly, while over-inflated tyres give a harsh ride and less grip. Check the pressure when the tyres are cold, use the figure on the driver's door frame rather than the maximum printed on the tyre, and convert it to the unit your gauge uses. A car that wants 2.2 bar needs 32 PSI; a bicycle that wants 100 PSI needs 6.9 bar.</p>
+<p>Weather pressure tells you what the sky will do: high pressure usually means settled, clear weather, while falling pressure often brings rain and wind. A pressure of 1,030 hectopascals is high, 1,000 is low, and a drop of more than 10 hectopascals in a few hours usually means a storm is coming. In the kitchen, a pressure cooker works at about 1 bar above atmospheric pressure, which raises the boiling point of water to about 120 degrees Celsius and cooks food much faster.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How many PSI is 1 bar?</strong><br>One bar is 14.5 PSI.</p>
+<p><strong>What is standard atmospheric pressure?</strong><br>101,325 pascals, or 1,013.25 hectopascals, or 14.7 PSI.</p>
+<p><strong>What pressure should car tyres be?</strong><br>Usually 30–35 PSI (2.0–2.4 bar) — check the driver&#x27;s door frame.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>

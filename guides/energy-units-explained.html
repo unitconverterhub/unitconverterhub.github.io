@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Units Explained: Joules, Calories and Kilowatt-hours | Unit Converter</title>
+<meta name="description" content="Understand energy units — joules, calories, kilowatt-hours and BTUs — how they relate, and how to convert them for food, electricity and heating.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.65}
+a{color:#0d9488;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0f766e;color:#fff;padding:14px 0}
+.header-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+.logo span{color:#5eead4}
+nav a{color:#ccfbf1;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:56px 20px 44px;text-align:center}
+.hero h1{font-size:38px;line-height:1.2;margin-bottom:12px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 24px;color:#ecfdf5}
+.search-wrap{max-width:640px;margin:0 auto 22px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px;font-size:17px;border:none;border-radius:10px;outline:none}
+.search-results{position:absolute;left:0;right:0;top:58px;background:#fff;color:#1f2937;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);text-align:left;overflow:hidden;z-index:10;display:none}
+.search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:#fff;font-size:15px;cursor:pointer}
+.search-results button:hover{background:#f0fdfa}
+.converter{background:#fff;color:#1f2937;max-width:760px;margin:0 auto;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);text-align:left}
+.converter h2{font-size:20px;margin-bottom:14px;color:#0f766e}
+.conv-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.conv-field{flex:1;min-width:140px}
+.conv-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#475569}
+.conv-field input,.conv-field select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+.swap-btn{padding:11px 16px;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.swap-btn:hover{background:#0f766e}
+.result-box{margin-top:16px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 16px;font-size:18px}
+.result-box strong{color:#0f766e}
+.formula{margin-top:8px;font-size:13px;color:#64748b}
+main{max-width:1100px;margin:0 auto;padding:36px 20px}
+section{margin-bottom:40px}
+h2.sec{font-size:26px;margin-bottom:6px;color:#0f766e}
+.sec-sub{color:#64748b;margin-bottom:18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px}
+.tool-card h3{font-size:18px;margin-bottom:6px}
+.tool-card p{font-size:14px;color:#64748b}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.article-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:180px;object-fit:cover;display:block}
+.article-card .card-body{padding:16px}
+.article-card h3{font-size:17px;margin-bottom:6px;line-height:1.4}
+.article-card p{font-size:14px;color:#64748b}
+.article-page{max-width:800px;margin:0 auto}
+.article-page img.hero-img{width:100%;height:auto;border-radius:12px;margin:16px 0 24px}
+.article-page h1{font-size:32px;line-height:1.25;margin-bottom:8px}
+.article-page h2{font-size:22px;margin:26px 0 10px;color:#0f766e}
+.article-page p{margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 14px 22px}
+.article-page li{margin-bottom:6px}
+.faq{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:20px;margin-top:28px}
+.faq h2{margin-top:0}
+.faq p{margin-bottom:12px}
+.meta{color:#94a3b8;font-size:14px;margin-bottom:10px}
+.tool-page{max-width:760px;margin:0 auto}
+.tool-page h1{font-size:30px;margin-bottom:8px}
+.tool-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+footer{background:#134e4a;color:#ccfbf1;padding:32px 20px;margin-top:20px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#5eead4}
+footer p{font-size:14px}
+@media(max-width:640px){.hero h1{font-size:28px}.conv-row{flex-direction:column;align-items:stretch}}
+</style>
+
+</head>
+<body>
+<header><div class="header-in"><a class="logo" href="/index.html">Unit<span>Converter</span></a>
+<nav><a href="/index.html">Home</a><a href="/tools/length-converter.html">Length</a><a href="/tools/weight-converter.html">Weight</a><a href="/tools/temperature-converter.html">Temperature</a><a href="/tools/volume-converter.html">Volume</a><a href="/about.html">About</a></nav></div></header>
+<main><div class="article-page">
+<p class="meta"><a href="/index.html">Home</a> &rsaquo; Guides &rsaquo; Energy Units Explained: Joules, Calories and Kilowatt-hours</p>
+<h1>Energy Units Explained: Joules, Calories and Kilowatt-hours</h1>
+<p class="meta">UnitConverter guides &middot; Measurement</p>
+<img class="hero-img" src="/images/energy-units-explained.jpg" alt="Energy Units Explained: Joules, Calories and Kilowatt-hours">
+<p>Energy is measured in more units than almost anything else, because every industry invented its own. Food labels use calories, electricity bills use kilowatt-hours, scientists use joules, and heating engineers use BTUs. They all measure the same thing — the capacity to do work or produce heat — but the numbers look completely different: a chocolate bar has 220 kilocalories, 920 kilojoules, or 0.26 kilowatt-hours. This guide explains what each unit means and how to convert between them.</p>
+<h2>The joule: the scientific standard</h2>
+<p>The joule is the SI unit of energy: one joule is the energy used when a force of one newton moves an object one metre. It is a small unit — lifting an apple one metre takes about one joule — so everyday energy is measured in kilojoules (1,000 joules) or megajoules (1,000,000 joules). A kilowatt-hour is 3.6 megajoules. A litre of petrol contains about 34 megajoules of energy, and a typical adult needs about 8 to 10 megajoules of food energy per day.</p>
+<p>The joule connects neatly to the other SI units: one watt is one joule per second, so a 100-watt light bulb uses 100 joules every second. Run it for an hour and it has used 360,000 joules, or 0.1 kilowatt-hours. This tidy relationship is why scientists and engineers use joules — every calculation in physics works out without conversion factors. When you see energy quoted in joules, divide by 1,000 for kilojoules and by 3,600,000 for kilowatt-hours.</p>
+<h2>Calories and food energy</h2>
+<p>The calorie is the unit everyone knows from food, but it is widely misunderstood. The calorie on a food label is actually a kilocalorie — 1,000 small calories — and is sometimes written as Calorie with a capital C to make the distinction. One kilocalorie is the energy needed to heat one kilogram of water by one degree Celsius, and it equals 4,184 joules. A typical adult needs about 2,000 to 2,500 kilocalories per day, which is 8,400 to 10,500 kilojoules.</p>
+<p>Different foods pack different amounts of energy per gram: fat has 9 kilocalories per gram, alcohol has 7, protein and carbohydrate each have 4. That is why fatty foods are so energy-dense — a small handful of nuts can contain as many calories as a large salad. When comparing food labels, check whether the energy is given per 100 grams or per serving, because the numbers can differ by a factor of three or more. And remember that the calorie counts on labels are estimates: the human body does not extract every calorie from every food.</p>
+<h2>Kilowatt-hours and electricity bills</h2>
+<p>The kilowatt-hour is the unit on every electricity bill. One kilowatt-hour is the energy used by a 1,000-watt appliance running for one hour — or a 100-watt bulb running for ten hours. It equals 3.6 megajoules or 3,412 BTUs. A typical household uses 200 to 400 kilowatt-hours per month, depending on climate, heating and appliances. At a price of 15 cents per kilowatt-hour, that is 30 to 60 dollars a month before taxes and standing charges.</p>
+<p>To understand your bill, convert your appliances into kilowatt-hours. A 2,000-watt kettle running for three minutes uses 0.1 kilowatt-hours. A 150-watt television running for four hours uses 0.6 kilowatt-hours. A 3,000-watt air conditioner running for eight hours uses 24 kilowatt-hours — which is why air conditioning dominates summer electricity bills. The fastest way to cut a bill is to find the appliance with the highest wattage and the longest running time, and reduce one of the two.</p>
+<h2>BTUs, heating and fuel</h2>
+<p>The British thermal unit is the energy needed to heat one pound of water by one degree Fahrenheit. It equals 1,055 joules, so a kilowatt-hour is 3,412 BTUs. Air conditioners and heaters are rated in BTUs per hour: a small room needs about 5,000 BTUs per hour of cooling, a large living room needs 12,000, and a whole house might need 36,000. A gas boiler might be rated at 24 kilowatts, which is about 82,000 BTUs per hour.</p>
+<p>Fuel energy is usually quoted per litre or per kilogram. A litre of petrol contains about 34 megajoules, a litre of diesel about 38, and a kilogram of firewood about 15. Natural gas is sold by the cubic metre or by the therm, and one therm is 100,000 BTUs or about 105 megajoules. When comparing heating fuels, convert everything to cost per kilowatt-hour: divide the price by the energy content, and the cheapest fuel becomes obvious.</p>
+<div class="faq"><h2>Frequently asked questions</h2>
+<p><strong>How many joules in a calorie?</strong><br>One kilocalorie (food calorie) is 4,184 joules.</p>
+<p><strong>How many kWh is 1 megajoule?</strong><br>One megajoule is 0.278 kilowatt-hours.</p>
+<p><strong>What is a BTU?</strong><br>The energy to heat one pound of water by one degree Fahrenheit — 1,055 joules.</p>
+</div>
+<p style="margin-top:24px"><a href="/index.html">&larr; Back to all guides</a></p></div></main>
+<footer><div class="foot-in"><div><strong>UnitConverter</strong><p>Free, exact unit conversions in your browser. No sign-up, no tracking.</p></div>
+<div><p><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a><br><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/disclaimer.html">Disclaimer</a></p></div></div></footer>
+</body>
+</html>
